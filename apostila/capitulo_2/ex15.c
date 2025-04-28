@@ -6,26 +6,18 @@ o valor da compra for menor que R$20,00, caso contrário, o lucro será de 30%.
 Faça um programa em C que leia o valor do produto e imprima o valor da venda.*/
 
 int main() {
-    float salario, desconto;
+    float valorProduto, valorVenda;
 
-    printf("Digite o salario: ");
-    scanf("%f", &salario);
+    printf("Digite o valor de compra do produto: ");
+    scanf("%f", &valorProduto);
 
-    if(salario <= 600.0) {
-        printf("Isento de desconto!\n");
-    } else if (salario > 600.0 && salario <= 1200.0) {
-        desconto = salario * 0.20;
-        printf("Desconto de (20%%) aplicado: %.2f\n", desconto);
-    } else if (salario > 1200.0 && salario <= 2000.0) {
-        desconto = salario * 0.25;
-        printf("Desconto de (25%%) aplicado: %.2f\n", desconto);
-    } else if (salario > 2000.0) {
-        desconto = salario * 0.30;
-        printf("Desconto de (30%%) aplicado: %.2f\n", desconto);
+    if(valorProduto < 20.0){
+        valorVenda = valorProduto * 1.45;
     } else {
-        printf("Valor invalido!\n");
-        exit(0);
+        valorVenda = valorProduto * 1.3;
     }
+
+    printf("Valor da venda: R$ %.2f\n", valorVenda);
 
     return 0;
 }
